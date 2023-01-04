@@ -1,0 +1,28 @@
+<!-- Router get function output -->
+'get' => [
+'/' => homepage(callback),
+'/contact' => contact(callback),
+]
+<!-- Router resolve you can dump the $this->routes to see inside(the callback is a closure class) -->
+<!-- Router resolve callback you can use this for condition -->
+if (!is_callable($callback)) {
+echo "Not Found! lmao";
+exit;
+}
+<!-- Router if you want to remove the get delete this 2 get-->
+$this->routes['get'][$path] = $callback;
+$callback = $this->routes[$method][$path] ?? false;
+//! delete the ['get'] and [$method]
+
+
+<!-- vardump -->
+echo '
+<pre>';
+var_dump($path);
+echo '</pre>';
+exit;
+
+<!-- Request getPath -->
+<!-- you can use this to shorten the code -->
+$path = $_SERVER['PATH_INFO'] ?? '/';
+return $path;

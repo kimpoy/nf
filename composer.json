@@ -1,0 +1,15 @@
+{
+    "name": "kimpoy/framework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kimpoy",
+            "email": "quarterofsilence1@gmail.com"
+        }
+    ],
+    "require": {}
+}
